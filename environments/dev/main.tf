@@ -29,4 +29,5 @@ module "ec2" {
     key_name      = var.key_name
     ami_id        = var.ami_id
     project       = var.project
+    security_group_ids = module.security_group_ids
 }
