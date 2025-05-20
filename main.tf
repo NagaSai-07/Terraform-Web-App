@@ -8,9 +8,9 @@ module "vpc" {
 }
 
 module "security" {
-  source = "./modules/security"
-  vpc_id = module.vpc.vpc_id
-  project = var.project
-  key_name = var.key_name
-  
+  source          = "./modules/security"
+  vpc_id          = module.vpc.vpc_id
+  project         = "${var.project}-web-sg"
+  key_name        = var.key_name
+  public_key_path = var.public_key_path
 }
