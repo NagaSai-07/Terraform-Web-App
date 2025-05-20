@@ -5,3 +5,5 @@ private_subnets = ["10.0.3.0/24", "10.0.4.0/24"]
 azs = ["ap-south-1a", "ap-south-1b"]
 key_name        = "webapp-key"
 public_key_path = "~/.ssh/webapp.pub"
+instance_type = "t2.micro"
+ami_id = "ami-04890fefece4fb64f"
