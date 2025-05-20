@@ -6,3 +6,11 @@ module "vpc" {
   azs             = var.azs
   project         = var.project
 }
+
+module "security" {
+  source = "./modules/security"
+  vpc_id = module.vpc.vpc_id
+  project = var.project
+  key_name = var.key_name
+  
+}
