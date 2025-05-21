@@ -16,7 +16,7 @@ resource "aws_subnet" "public_subnets" {
     map_public_ip_on_launch = true
 
     tags = {
-      Name = "${var.project}-public-$(count.index + 1)"
+      Name = "${var.project}-public-${count.index + 1}"
     }
 
 }
@@ -28,7 +28,7 @@ resource "aws_subnet" "private_subents" {
     availability_zone = var.azs[count.index]
 
     tags = {
-        Name = "${var.project}-private-$(count.index + 1)"
+        Name = "${var.project}-private-${count.index + 1}"
     }
   
 }

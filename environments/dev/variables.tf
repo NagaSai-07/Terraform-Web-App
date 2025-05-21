@@ -29,3 +29,9 @@ variable "key_name" {
 variable "ami_id" {
   default = "ami-0af9569868786b23a"
 }
+
+variable "public_key_path" {
+  description = "Path to the SSH public key"
+  type        = string
+  default = "C:/Users/nagas/.ssh/id_ed25519.pub"
+}

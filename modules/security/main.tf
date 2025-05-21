@@ -3,10 +3,10 @@ resource "aws_security_group" "web_sg" {
     description = "Allow SSH and HTTP"
     vpc_id = var.vpc_id
 
-    ingress = {
+    ingress {
         description = "Allow ssh from anywhere"
         from_port = 22
-        to_prot = 22
+        to_port = 22
         protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }

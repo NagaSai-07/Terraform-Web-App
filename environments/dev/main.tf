@@ -22,6 +22,13 @@ module "vpc" {
     project         = var.project
 }
 
+module "security" {
+  source           = "../../modules/security"
+  vpc_id           = module.vpc.vpc_id
+  project          = var.project
+  key_name         = var.key_name
+  public_key_path  = var.public_key_path
+}
 module "ec2" {
     source        = "../../modules/ec2"
     subnet_id     = module.vpc.public_subnet_ids[0]
@@ -29,5 +36,5 @@ module "ec2" {
     key_name      = var.key_name
     ami_id        = var.ami_id
     project       = var.project
-    security_group_ids = module.security_group_ids
+    security_group_ids = [module.security.web_sg_id]
 }
