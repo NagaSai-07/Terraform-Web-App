@@ -23,7 +23,7 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  default = "nagasai"
+  default = "nagasai2"
 }
 
 variable "ami_id" {

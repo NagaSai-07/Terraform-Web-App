@@ -37,4 +37,5 @@ module "ec2" {
     ami_id        = var.ami_id
     project       = var.project
     security_group_ids = [module.security.web_sg_id]
+    user_data = file("${path.module}/scripts/install_web.sh")
 }
