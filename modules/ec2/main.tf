@@ -5,6 +5,7 @@ resource "aws_instance" "web" {
     key_name = var.key_name
     associate_public_ip_address = true
     vpc_security_group_ids = var.security_group_ids
+    user_data = var.user_data
 
     tags = {
         Name = "${var.project}-web"

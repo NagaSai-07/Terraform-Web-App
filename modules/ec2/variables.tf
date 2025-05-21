@@ -21,3 +21,8 @@ variable "security_group_ids" {
 variable "project" {
     type = string
 }
+
+variable "user_data" {
+  type = string
+  default = ""
+}

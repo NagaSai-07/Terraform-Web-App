@@ -1,45 +1,31 @@
 variable "vpc_cidr" {
-  description = "CIDR block for the VPC"
-  type        = string
+  default = "10.0.0.0/16"
 }
 
-variable "public_subnets" {
-  description = "List of public subnet CIDRs"
-  type        = list(string)
+variable "public_subnet_cidrs" {
+  default = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
-variable "private_subnets" {
-  description = "List of private subnet CIDRs"
-  type        = list(string)
+variable "private_subnet_cidrs" {
+  default = ["10.0.101.0/24", "10.0.102.0/24"]
 }
 
 variable "azs" {
-  description = "List of Availability Zones"
-  type        = list(string)
+  default = ["ap-south-1a", "ap-south-1b"]
 }
 
 variable "project" {
-  description = "Project name for tagging"
-  type        = string
+  default = "dev"
 }
 
 variable "instance_type" {
-  description = "EC2 instance type"
-  type        = string
+  default = "t2.micro"
 }
 
 variable "key_name" {
-  description = "SSH key name for EC2 access"
-  type        = string
+  default = "nagasai"
 }
 
 variable "ami_id" {
-  description = "AMI ID for the EC2 instance"
-  type        = string
+  default = "ami-0af9569868786b23a"
 }
-
-variable "public_key_path" {
-  type = string
-}
-
-
