@@ -25,3 +25,12 @@ module "ec2" {
     security_group_ids = [module.security.web_sg_id]
     user_data = file("${path.module}/scripts/install_web.sh")
 }
+
+module "alb" {
+  source = "../../modules/alb"
+  project = var.project
+  vpc_id = module.vpc.vpc_id
+  instance_id = module.ec2.instance_id
+  public_subnet_ids = module.vpc.public_subnet_ids
+  security_group_ids = [module.security.web_sg_id]
+}

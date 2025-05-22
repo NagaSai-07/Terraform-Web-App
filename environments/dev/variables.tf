@@ -23,7 +23,7 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  default = "nagasai2"
+  default = "terraform"
 }
 
 variable "ami_id" {
